@@ -13,7 +13,7 @@
   <div id="todo">
     <div class="header">
       <input id="headerToggleButton" type="checkbox" @click="toggleSelectAll" v-model="allDone">
-      <label for="headerToggleButton"></label>
+      <label for="headerToggleButton" v-bind:class="{hide: todos.length > 0}></label>
       <input placeholder="What needs to be done?" type="text" @keyup.13="addItem($event)" @blur="addItem($event)">
     </div>
     <ul class="todos">

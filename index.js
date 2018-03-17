@@ -5,6 +5,13 @@ const http = require('http')
 const https = require('https')
 const port = process.env.PORT || 3001
 var todoServer = express()
+var httpServer = express()
+
+httpServer.use((req, res, next) => {
+  console.log('HTTP', req.method, req.ip)
+  res.redirect('https://vps.billid.club:3333')
+})
+
 todoServer.set('x-powered-by', false)
 
 
@@ -25,3 +32,5 @@ var httpsServer = https.createServer({
   key: fs.readFileSync('/root/.acme.sh/vps.billid.club/vps.billid.club.key'),
   cert: fs.readFileSync('/root/.acme.sh/vps.billid.club/vps.billid.club.cer')
 }, todoServer).listen(port, () => console.log('listening on port: ', port))
+
+http.createServer(httpServer).listen(80)
