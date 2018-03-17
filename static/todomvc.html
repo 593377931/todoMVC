@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VanillaJS·TodoMVC</title>
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="todomvc.css">
+</head>
+<body>
+  <header>todos</header>
+  <section>
+    <div class="inputComponent">
+      <i class="fa fa-chevron-down" data-checkall="nocheck"></i>
+      <span class="tips">What need to be done?</span>
+      <div class="input" contenteditable="true">
+      </div>
+    </div>
+    <ul class="items">
+      
+    </ul>
+    <div class="controlBar">
+      <span class="massage">item left</span>
+      <div class="buttons">
+        <label>
+          <input type="radio" name="parts" checked>
+          <span data-which="All">All</span>
+        </label>
+        <label>
+          <input type="radio" name="parts">
+          <span data-which="Active">Active</span>
+        </label>
+        <label>
+          <input type="radio" name="parts">
+          <span data-which="Completed">Completed</span>
+        </label>
+      </div>
+      <span class="clearComplete">Clear completed</span>
+    </div>
+  </section>
+  <footer>
+    <p>Double-click to edit a to do</p>
+    <p>Create by Oscar Godson</p>
+    <p>Simulate by Zimu Liu</p>
+    <p>Part of Todo MVC</p>
+  </footer>
+</body>
+<script src="todomvc.js"></script>
+</html>
+
+<!--   <li data-isShow="show">
+    <input type="checkbox" id="${'item' + itemCounter}">
+    <label for="${'item' + itemCounter}" class="button"></label>
+    <div><p>${str}</p></div>
+    <i class="fa fa-times close"></i>
+  </li> -->

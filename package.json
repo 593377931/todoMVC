@@ -1,0 +1,29 @@
+{
+  "name": "todomvc",
+  "version": "0.0.1",
+  "description": "todoMVC",
+  "main": "index.js",
+  "dependencies": {
+    "_font-awesome@4.7.0@font-awesome": "^4.7.0",
+    "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
+    "fontawesome": "^4.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/593377931/todoMVC.git"
+  },
+  "keywords": [
+    "todoMVC"
+  ],
+  "author": "ZML",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/593377931/todoMVC/issues"
+  },
+  "homepage": "https://github.com/593377931/todoMVC#readme"
+}

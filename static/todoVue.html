@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>todoMVC</title>
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="todoVue.css">
+</head>
+<body>
+  <header>
+    todos
+  </header>
+  <div id="todo">
+    <div class="header">
+      <input id="headerToggleButton" type="checkbox" @click="toggleSelectAll" v-model="allDone">
+      <label for="headerToggleButton"></label>
+      <input placeholder="What needs to be done?" type="text" @keyup.13="addItem($event)" @blur="addItem($event)">
+    </div>
+    <ul class="todos">
+      <li v-for="(item, index) in todos" v-show="shouldShow(index)">
+        <input :id="'item' + index" type="checkbox" :checked="item.done" v-model="item.done">
+        <label :for="'item' + index"></label>
+        <span :title="setTime(item.timeStamp)" class="item" v-if="index !== editing" @dblclick="toggleEditing(index, $event)">{{ item.content }}</span>
+        <input v-else type="text" @keyup.enter="blur" v-model="item.content" @blur="editing = -1">
+        <span class="close" @click="removeCurrentItem(index)">×</span>
+      </li>
+    </ul>
+    <div class="footer" v-show="this.todos.length">
+      <span class="itemLeft">{{ leftTodoCount }} item{{this.todos.filter(item => !item.done).length > 1 ? 's' : ''}} left</span>
+      <div class="controls">
+        <input id="all" type="radio" v-model="whichPartsShow" value="all">
+        <label for="all">All</label>
+        <input id="active" type="radio" v-model="whichPartsShow" value="active"> 
+        <label for="active">Active</label>
+        <input id="completed" type="radio" v-model="whichPartsShow" value="completed"> 
+        <label for="completed">Completed</label>
+      </div>
+      <span class="clearComplete" @click="clearCompleted" v-show="this.todos.some(item => item.done)">Clear completed</span>
+    </div>
+  </div>
+</body>
+<script src="vue.js"></script>
+<script src="todoVue.js"></script>
+</html>

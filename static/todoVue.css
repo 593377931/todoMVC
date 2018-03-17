@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: whitesmoke;
+  margin-bottom: 100px; }
+
+header {
+  font-size: 100px;
+  text-align: center;
+  color: #ead7d7;
+  padding: 20px 0; }
+
+#todo {
+  background-color: #fff;
+  width: 600px;
+  margin: auto;
+  box-shadow: 0 0 20px 0 #ead7d7; }
+  #todo input[type=checkbox] {
+    display: none; }
+  #todo div.header {
+    user-select: none;
+    height: 65px;
+    border-bottom: 1px solid #e1e1e1; }
+    #todo div.header input[type=checkbox]:checked + label::before {
+      color: #5dc2af; }
+    #todo div.header label {
+      width: 60px;
+      height: 100%;
+      display: inline-block;
+      text-align: center; }
+      #todo div.header label::before {
+        content: "\f107";
+        font: 40px/65px FontAwesome;
+        vertical-align: top;
+        color: #e1e1e1; }
+    #todo div.header input[type=text] {
+      width: 80%;
+      outline: none;
+      border: none;
+      font-size: 20px;
+      line-height: 65px;
+      background-color: transparent;
+      vertical-align: top; }
+  #todo ul.todos {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    #todo ul.todos li {
+      position: relative;
+      min-height: 60px;
+      line-height: 1.5;
+      font-size: 20px;
+      border-bottom: 1px solid #e1e1e1; }
+      #todo ul.todos li:hover span.close {
+        color: #b4b4b4; }
+      #todo ul.todos li input[type=checkbox]:checked + label::after {
+        color: #5dc2af; }
+      #todo ul.todos li input[type=checkbox]:checked ~ span.item {
+        text-decoration: line-through;
+        color: #e1e1e1; }
+      #todo ul.todos li label {
+        display: inline-block;
+        width: 60px;
+        height: 100%;
+        text-align: center; }
+        #todo ul.todos li label::before {
+          position: absolute;
+          display: inline-block;
+          content: '';
+          width: 30px;
+          height: 30px;
+          left: 15px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          border-radius: 999px;
+          box-shadow: 0 0 0 1px #e1e1e1;
+          vertical-align: middle; }
+        #todo ul.todos li label::after {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          left: 15px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          content: '\f00c';
+          font-family: 'FontAwesome';
+          color: #e1e1e1; }
+      #todo ul.todos li span.item {
+        display: inline-block;
+        position: relative;
+        width: 80%;
+        margin: 15px auto; }
+      #todo ul.todos li input[type=text] {
+        padding-left: 10px;
+        height: 60px;
+        width: 80%;
+        vertical-align: top;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        box-shadow: inset 0 0 8px 0 red; }
+      #todo ul.todos li span.close {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 20px;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        transition: all .2s; }
+  #todo div.footer {
+    height: 40px;
+    vertical-align: top;
+    line-height: 40px;
+    position: relative;
+    color: #8d778d; }
+    #todo div.footer span.itemLeft {
+      margin-left: 10px; }
+    #todo div.footer div.controls {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: inline-block; }
+      #todo div.footer div.controls input {
+        display: none; }
+        #todo div.footer div.controls input + label {
+          padding: 0px 5px;
+          border-radius: 3px; }
+        #todo div.footer div.controls input:checked + label {
+          box-shadow: 0 0 0 1px #999; }
+    #todo div.footer span.clearComplete {
+      font-size: 14px;
+      float: right;
+      margin-right: 20px; }
+      #todo div.footer span.clearComplete:hover {
+        text-decoration: underline;
+        cursor: pointer; }
+
+/*# sourceMappingURL=todoVue.css.map */
