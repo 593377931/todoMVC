@@ -4,7 +4,6 @@
   "description": "todoMVC",
   "main": "index.js",
   "dependencies": {
-    "_font-awesome@4.7.0@font-awesome": "^4.7.0",
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
     "fontawesome": "^4.7.2"
